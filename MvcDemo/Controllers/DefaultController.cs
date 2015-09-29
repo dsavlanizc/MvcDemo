@@ -50,6 +50,7 @@ namespace MvcDemo.Controllers
                     context.Students.Add(student);
                     context.SaveChanges();
                     ViewBag.Result = "Student Created successfully!";
+                    return RedirectToAction("ShowAll");
                 }
                 catch (Exception ex)
                 {

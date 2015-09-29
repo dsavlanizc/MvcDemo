@@ -14,8 +14,10 @@ namespace MvcDemo.Models
         public int RollNo { get; set; }
 
         [Required(AllowEmptyStrings=false,ErrorMessage="Please enter first name!")]
+        [Display(Name="First Name")]
         public string FName { get; set; }
 
+        [Display(Name = "Last Name")]
         [Required(AllowEmptyStrings=false,ErrorMessage="Please enter last name!")]
         public string LName { get; set; }
     }
