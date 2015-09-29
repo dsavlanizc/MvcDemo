@@ -1,0 +1,22 @@
+﻿@model MvcDemo.Models.Student
+@{
+    ViewBag.Title = "Create new";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Label("First Name:");
+    @Html.TextBox("FName");
+    @Html.ValidationMessageFor(m =>m.FName)
+    <br />
+    @Html.Label("Last Name:");
+    @Html.TextBox("LName");
+    @Html.ValidationMessageFor(m => m.LName)
+    <br />
+    @Html.Label("Roll Number:");
+    @Html.TextBox("RollNo", null, new {type = "number"});
+    @Html.ValidationMessageFor(m => m.RollNo)
+    <br />
+    <input type="submit" value="Create" />
+    <h3>@ViewBag.Result</h3>
+}

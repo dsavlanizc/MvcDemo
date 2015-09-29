@@ -1,0 +1,22 @@
+﻿@model List<MvcDemo.Models.Student>
+    @{
+        ViewBag.Title = "Show All";
+    }
+
+    <table border="1">
+    <thead>
+        <td>First Name</td>
+        <th>Last Name</th>
+        <th>Roll No.</th>
+    </thead>
+    @foreach (var std in Model)
+    {
+        <tr>
+            <td>@std.FName</td>
+            <td>@std.LName</td>
+            <td>@std.RollNo</td>
+        </tr>
+    }
+</table>
+
+
