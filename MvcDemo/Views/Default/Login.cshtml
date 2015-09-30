@@ -2,10 +2,27 @@
 @{
     ViewBag.Title = "Login";
 }
-
-<h2>Login</h2>
-<table>
-    <tr>
-        <td>Now What</td>
-    </tr>
-</table>
+@using (Html.BeginForm()){
+    
+    <div class="form-horizontal">
+        <h2>Login</h2>
+        <hr/>
+        <div class="form-group">
+            <label class="control-label col-md-2">Email ID</label>
+            <div class="col-md-4">
+                <input type="email" class="form-control" id="usr" placeholder="Enter Email Id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Password</label>
+            <div class="col-md-4">
+                <input type="password" class="form-control" id="usr" placeholder="Enter Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Submit" class="btn btn-success" onclick="validate();">
+            </div>
+        </div>
+    </div>
+}

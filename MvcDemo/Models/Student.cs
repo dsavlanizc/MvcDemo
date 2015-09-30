@@ -10,6 +10,7 @@ namespace MvcDemo.Models
     {
         public int ID { get; set; }
         
+        [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage="Roll number is required!")]
         public int RollNo { get; set; }
 
