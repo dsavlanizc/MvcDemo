@@ -5,12 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     @Scripts.Render("~/Content/js")
-    @Styles.Render("~/Content/css");
+    @Styles.Render("~/Content/css")
     <title>@ViewBag.Title</title>
 </head>
 <body>
-@RenderBody()
+    <div class="container">
+        @RenderBody()
+    </div>
 </body>
 </html>

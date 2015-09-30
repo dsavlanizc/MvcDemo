@@ -12,7 +12,6 @@ namespace MvcDemo.Controllers
     {
         //
         // GET: /Default/
-
         public ActionResult Index()
         {
             try

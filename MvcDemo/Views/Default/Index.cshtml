@@ -1,11 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index Page";
 }
-<form method="post">
-    
-    <ul class="menu">
-        <li><a href="Default/Create">Create</a></li>
-        <li><a href="Default/Edit">Edit</a></li>
-        <li><a href="Default/ShowAll">ShowAll</a></li>
-    </ul>
-</form>
+<div class="jumbotron">
+    <h3>Perform Actions!</h3>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <button class="btn btn-success" onclick="window.location.href='/Default/Create'">Create</button>
+        <button class="btn btn-success" onclick="window.location.href='/Default/Edit'">Edit</button>
+        <button class="btn btn-success" onclick="window.location.href='/Default/ShowAll'">Show All</button>
+    </div>
+</div>
