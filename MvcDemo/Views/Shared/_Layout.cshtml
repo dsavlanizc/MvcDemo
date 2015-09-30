@@ -3,14 +3,11 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    @Scripts.Render("~/Content/Scripts")
-    <link href="@Url.Content("~/Content/Style.css")"
-          rel="stylesheet" type="text/css" />
-    @RenderSection("Styles", false)
+    @Scripts.Render("~/Content/js")
+    @Styles.Render("~/Content/css");
     <title>@ViewBag.Title</title>
 </head>
 <body>
