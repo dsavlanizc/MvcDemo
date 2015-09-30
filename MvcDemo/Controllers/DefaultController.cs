@@ -10,6 +10,7 @@ namespace MvcDemo.Controllers
 {
     public class DefaultController : Controller
     {
+        MyContext cnt = new MyContext();
         //
         // GET: /Default/
         public ActionResult Index()
@@ -28,12 +29,13 @@ namespace MvcDemo.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            Student student = new Student();
+            student.ID = cnt.Students.Max(m => m.ID) + 1;
+            return View(student);
         }
 
         public ActionResult ShowAll()
         {
-            MyContext cnt = new MyContext();
             var std = cnt.Students.ToList();
             return View(std);
         }
