@@ -51,7 +51,6 @@ namespace MvcDemo.Controllers
                     context.Students.Add(student);
                     context.SaveChanges();
                     ViewBag.Result = "Student Created successfully!";
-                    return View();
 
                     //return RedirectToAction("ShowAll");
                 }
@@ -59,7 +58,7 @@ namespace MvcDemo.Controllers
                 {
                     ViewBag.Result = ex.ToString();
                 }
-                return View();
+                return View(student);
             }
             else
             {
