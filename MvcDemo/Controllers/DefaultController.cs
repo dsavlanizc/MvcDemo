@@ -75,5 +75,10 @@ namespace MvcDemo.Controllers
                 ViewBag.myData = "Addition is: " + (a + b);
             }
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }

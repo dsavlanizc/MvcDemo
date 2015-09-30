@@ -63,6 +63,5 @@ C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\bin\Syst
 C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\bin\System.Web.WebPages.xml
 C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\bin\System.Web.WebPages.Deployment.xml
 C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\bin\System.Web.WebPages.Razor.xml
-C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\obj\Debug\MvcDemo.csprojResolveAssemblyReference.cache
 C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\obj\Debug\MvcDemo.dll
 C:\Users\mgoswami\Documents\Visual Studio 2013\Projects\GitDemo\MvcDemo\obj\Debug\MvcDemo.pdb
