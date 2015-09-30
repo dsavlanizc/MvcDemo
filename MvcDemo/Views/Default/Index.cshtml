@@ -1,8 +1,12 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+@section styles{
+    <link rel="Stylesheet" href="@Href("~/Content/Styles.css")" />
+}
 <form method="post">
-    <ul>
+    
+    <ul class="menu">
         <li><a href="Default/Create">Create</a></li>
         <li><a href="Default/Edit">Edit</a></li>
         <li><a href="Default/ShowAll">ShowAll</a></li>
