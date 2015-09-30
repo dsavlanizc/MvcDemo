@@ -139,6 +139,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\myscript.js" />
     <Content Include="Content\jquery.js" />
+    <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="image.jpg" />
     <Content Include="Web.config" />
