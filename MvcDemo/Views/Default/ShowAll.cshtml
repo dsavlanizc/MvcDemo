@@ -3,32 +3,34 @@
         ViewBag.Title = "Show All";
     }
 
-<h3>List Of Detail</h3>
-    <table border="1">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Roll No.</th>
-        </tr>
-    </thead>
+<h2>List All Detail</h2>
+<hr/>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
         <tbody>
             @foreach (var std in Model)
             {
                 <tr>
-                    <td>@std.FName</td>
-                    <td>@std.LName</td>
                     <td>@std.RollNo</td>
+                    <td>@std.FName </td>
+                    <td>@std.LName</td>
                 </tr>
             }
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="3">
-                    @Html.ActionLink("Back To lIst","Index")
+                    @Html.ActionLink("Back To lIst", "Index")
                 </td>
             </tr>
         </tfoot>
-</table>
-
+    </table>
+</div>
 
