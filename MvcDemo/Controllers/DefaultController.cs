@@ -29,7 +29,7 @@ namespace MvcDemo.Controllers
         public ActionResult Create()
         {
             Student student = new Student();
-            student.ID = dbCtx.Students.Max(m => m.ID) + 1;
+            student.RollNo = dbCtx.Students.Max(m => m.RollNo) + 1;
             return View(student);
         }
 
