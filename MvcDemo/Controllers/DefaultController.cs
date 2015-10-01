@@ -73,6 +73,11 @@ namespace MvcDemo.Controllers
 
         public ActionResult Edit()
         {
+            
+            if(ModelState.IsValid)
+            {
+                
+            }
             return View();
         }
 
