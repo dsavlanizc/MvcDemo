@@ -18,7 +18,6 @@ namespace MvcDemo.Controllers
             try
             {
                 Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyContext>());
-                GetResult();
                 return View();
             }
             catch
@@ -51,31 +50,26 @@ namespace MvcDemo.Controllers
                     context.Students.Add(student);
                     context.SaveChanges();
                     ViewBag.Result = "Student Created successfully!";
-
                     //return RedirectToAction("ShowAll");
                 }
                 catch (Exception ex)
                 {
                     ViewBag.Result = ex.ToString();
                 }
+                
+                ModelState.Clear();
+                student = new Student();
+                student.ID = cnt.Students.Max(m => m.ID) + 1;
                 return View(student);
             }
             else
             {
+                ModelState.Clear();
+                student = new Student();
+                student.ID = cnt.Students.Max(m => m.ID) + 1;
                 return View(student);
             }
             
-        }
-        
-        public void GetResult()
-        {
-            if (Request["num1"] != null)
-            {
-                int a, b;
-                int.TryParse(Request["num1"], out a);
-                int.TryParse(Request["num2"], out b);
-                ViewBag.myData = "Addition is: " + (a + b);
-            }
         }
 
         public ActionResult Login()
