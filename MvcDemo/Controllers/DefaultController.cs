@@ -86,18 +86,18 @@ namespace MvcDemo.Controllers
                     _student.LName = student.LName;
                     dbCtx.SaveChanges();
                     ViewBag.Result = "Student details updated successfully!";
-                    //return RedirectToAction("ShowAll");
+                    return RedirectToAction("ShowAll");
                 }
                 catch (Exception ex)
                 {
                     ViewBag.Result = ex.ToString();
                 }
-                return View();
+                return View(student);
             }
             else
             {
-                return RedirectToAction("ShowAll");
-                //return View(student);
+                //return RedirectToAction("ShowAll");
+                return View(student);
             }
         }
 

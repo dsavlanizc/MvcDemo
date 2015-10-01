@@ -1,10 +1,17 @@
 ﻿@model List<MvcDemo.Models.Student>
-    @{
-        ViewBag.Title = "Show All";
-    }
-
+@{
+    ViewBag.Title = "Show All";
+}
 <h2>List All Detail</h2>
-<hr/>
+<hr />
+
+@if (@ViewBag.Result != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong>@ViewBag.Result</strong>
+    </div>
+}
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
