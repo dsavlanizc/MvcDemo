@@ -10,7 +10,6 @@ namespace MvcDemo.Models
     {
         public int ID { get; set; }
         
-        [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage="Roll number is required!")]
         public int RollNo { get; set; }
 
@@ -21,5 +20,17 @@ namespace MvcDemo.Models
         [Display(Name = "Last Name")]
         [Required(AllowEmptyStrings=false,ErrorMessage="Please enter last name!")]
         public string LName { get; set; }
+
+        //[Display(Name = "EmailID/UserName")]
+        //[DataType(DataType.EmailAddress)]
+        //[Required(AllowEmptyStrings = false, ErrorMessage = "Please enter EmailID!")]
+        //public string EmailID { get; set; }
+
+        //[Display(Name = "Password")]
+        //[DataType(DataType.Password)]
+        //[Required(AllowEmptyStrings = false, ErrorMessage = "Please enter Password!")]
+        //public string Pswd { get; set; }
+
+
     }
 }

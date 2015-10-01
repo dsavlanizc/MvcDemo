@@ -3,6 +3,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using MvcDemo.Models;
 
 namespace MvcDemo
 {
@@ -18,6 +20,8 @@ namespace MvcDemo
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<MyContext>(null);
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyContext>());
         }
     }
 }

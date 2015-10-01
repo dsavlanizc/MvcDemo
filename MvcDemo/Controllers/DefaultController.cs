@@ -38,7 +38,7 @@ namespace MvcDemo.Controllers
             var std = dbCtx.Students.ToList();
             return View(std);
         }
-        
+
         [HttpPost]
         public ActionResult Create(Student student)
         {
@@ -56,7 +56,7 @@ namespace MvcDemo.Controllers
                 {
                     ViewBag.Result = ex.ToString();
                 }
-                
+
                 student = new Student();
                 student.ID = dbCtx.Students.Max(m => m.ID) + 1;
                 return View(student);
