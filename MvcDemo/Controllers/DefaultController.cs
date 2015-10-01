@@ -10,7 +10,7 @@ namespace MvcDemo.Controllers
 {
     public class DefaultController : Controller
     {
-        MyContext cnt = new MyContext();
+        MyContext dbCtx = new MyContext();
         //
         // GET: /Default/
         public ActionResult Index()
@@ -29,13 +29,13 @@ namespace MvcDemo.Controllers
         public ActionResult Create()
         {
             Student student = new Student();
-            student.ID = cnt.Students.Max(m => m.ID) + 1;
+            student.ID = dbCtx.Students.Max(m => m.ID) + 1;
             return View(student);
         }
 
         public ActionResult ShowAll()
         {
-            var std = cnt.Students.ToList();
+            var std = dbCtx.Students.ToList();
             return View(std);
         }
         
@@ -44,11 +44,10 @@ namespace MvcDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                MyContext context = new MyContext();
                 try
                 {
-                    context.Students.Add(student);
-                    context.SaveChanges();
+                    dbCtx.Students.Add(student);
+                    dbCtx.SaveChanges();
                     ViewBag.Result = "Student Created successfully!";
                     ModelState.Clear();
                     //return RedirectToAction("ShowAll");
@@ -59,26 +58,47 @@ namespace MvcDemo.Controllers
                 }
                 
                 student = new Student();
-                student.ID = cnt.Students.Max(m => m.ID) + 1;
+                student.ID = dbCtx.Students.Max(m => m.ID) + 1;
                 return View(student);
             }
             else
             {
                 student = new Student();
-                student.ID = cnt.Students.Max(m => m.ID) + 1;
+                student.ID = dbCtx.Students.Max(m => m.ID) + 1;
                 return View(student);
             }
-            
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            
-            if(ModelState.IsValid)
+            return View(dbCtx.Students.Where(w => w.ID == id).FirstOrDefault());
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
             {
-                
+                try
+                {
+                    Student _student = dbCtx.Students.Where(w => w.ID == student.ID).FirstOrDefault();
+                    _student.FName = student.FName;
+                    _student.LName = student.LName;
+                    dbCtx.SaveChanges();
+                    ViewBag.Result = "Student details updated successfully!";
+                    //return RedirectToAction("ShowAll");
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Result = ex.ToString();
+                }
+                return View();
             }
-            return View();
+            else
+            {
+                return RedirectToAction("ShowAll");
+                //return View(student);
+            }
         }
 
         public ActionResult Login()
