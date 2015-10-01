@@ -85,7 +85,7 @@ namespace MvcDemo.Controllers
                     _student.FName = student.FName;
                     _student.LName = student.LName;
                     dbCtx.SaveChanges();
-                    ViewBag.Result = "Student details updated successfully!";
+                    TempData["msg"] = "Student details updated successfully!";
                     return RedirectToAction("ShowAll");
                 }
                 catch (Exception ex)
