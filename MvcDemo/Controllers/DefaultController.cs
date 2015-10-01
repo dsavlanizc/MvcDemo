@@ -50,6 +50,7 @@ namespace MvcDemo.Controllers
                     context.Students.Add(student);
                     context.SaveChanges();
                     ViewBag.Result = "Student Created successfully!";
+                    ModelState.Clear();
                     //return RedirectToAction("ShowAll");
                 }
                 catch (Exception ex)
@@ -57,14 +58,12 @@ namespace MvcDemo.Controllers
                     ViewBag.Result = ex.ToString();
                 }
                 
-                ModelState.Clear();
                 student = new Student();
                 student.ID = cnt.Students.Max(m => m.ID) + 1;
                 return View(student);
             }
             else
             {
-                ModelState.Clear();
                 student = new Student();
                 student.ID = cnt.Students.Max(m => m.ID) + 1;
                 return View(student);

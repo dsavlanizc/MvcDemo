@@ -5,40 +5,45 @@
 
 @using (Html.BeginForm())
 {
-        <div class="form-horizontal">
-            <h2>Enter Detail</h2>
-            <hr />
-            <div class="row">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.RollNo, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-3 ">
-                        @Html.TextBox("RollNo", @Model.ID, htmlAttributes: new { @class = "form-control text-box single-line", type = "number", @readonly = true})
-                        @Html.ValidationMessageFor(m => m.RollNo, "", new { @class = "text-danger" })
-                    </div>
+    if (@ViewBag.Result != null)
+    {
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            <strong>@ViewBag.Result</strong>
+        </div>
+    }
+    <div class="form-horizontal">
+        <h2>Enter Detail</h2>
+        <hr />
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(model => model.RollNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3 ">
+                    @Html.TextBox("RollNo", @Model.ID, htmlAttributes: new { @class = "form-control text-box single-line", type = "number", @readonly = true })
+                    @Html.ValidationMessageFor(m => m.RollNo, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.Label("First Name:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-3">
-                        @Html.TextBox("FName", null, htmlAttributes: new { @class = "form-control text-box single-line" })
-                        @Html.ValidationMessageFor(m => m.FName, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("First Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.TextBox("FName", null, htmlAttributes: new { @class = "form-control text-box single-line" })
+                    @Html.ValidationMessageFor(m => m.FName, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.Label("Last Name:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-3">
-                        @Html.TextBox("LName", null, htmlAttributes: new { @class = "form-control text-box single-line" })
-                        @Html.ValidationMessageFor(m => m.LName, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Last Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.TextBox("LName", null, htmlAttributes: new { @class = "form-control text-box single-line" })
+                    @Html.ValidationMessageFor(m => m.LName, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
         </div>
+    </div>
     <a href="Index">Back to Menu</a>
-    <p class="bg-success">@ViewBag.Result</p>
-
 }
 
