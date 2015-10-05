@@ -21,10 +21,10 @@ namespace MvcDemo.Migrations
                 .PrimaryKey(t => t.ID);
             
         }
-        
-        public override void Down()
-        {
-            DropTable("dbo.Students");
-        }
+
+        //public override void Down()
+        //{
+        //    DropTable("dbo.Students");
+        //}
     }
 }

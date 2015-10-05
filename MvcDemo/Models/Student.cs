@@ -21,15 +21,15 @@ namespace MvcDemo.Models
         [Required(AllowEmptyStrings=false,ErrorMessage="Please enter last name!")]
         public string LName { get; set; }
 
-        //[Display(Name = "EmailID/UserName")]
-        //[DataType(DataType.EmailAddress)]
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Please enter EmailID!")]
-        //public string EmailID { get; set; }
+        [Display(Name = "EmailID/UserName")]
+        [DataType(DataType.EmailAddress)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter EmailID!")]
+        public string EmailID { get; set; }
 
-        //[Display(Name = "Password")]
-        //[DataType(DataType.Password)]
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Please enter Password!")]
-        //public string Pswd { get; set; }
+        [Display(Name = "Password")]
+        [DataType(DataType.Password)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter Password!")]
+        public string Pswd { get; set; }
 
 
     }

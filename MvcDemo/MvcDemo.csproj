@@ -133,6 +133,10 @@
     <Compile Include="Migrations\201510011158163_InitialCreate.Designer.cs">
       <DependentUpon>201510011158163_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510050651138_Initial.cs" />
+    <Compile Include="Migrations\201510050651138_Initial.Designer.cs">
+      <DependentUpon>201510050651138_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyContext.cs" />
     <Compile Include="Models\Student.cs" />
@@ -202,6 +206,12 @@
     <EmbeddedResource Include="Migrations\201510011158163_InitialCreate.resx">
       <DependentUpon>201510011158163_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510050651138_Initial.resx">
+      <DependentUpon>201510050651138_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClassDiagram1.cd" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

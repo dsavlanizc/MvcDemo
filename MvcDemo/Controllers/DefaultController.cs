@@ -84,6 +84,8 @@ namespace MvcDemo.Controllers
                     Student _student = dbCtx.Students.Where(w => w.ID == student.ID).FirstOrDefault();
                     _student.FName = student.FName;
                     _student.LName = student.LName;
+                    _student.EmailID = student.EmailID;
+                    _student.Pswd = student.Pswd;
                     dbCtx.SaveChanges();
                     TempData["msg"] = "Student details updated successfully!";
                     return RedirectToAction("ShowAll");
