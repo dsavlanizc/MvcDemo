@@ -9,7 +9,7 @@ namespace MvcDemo.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "MvcDemo.Models.MyContext";
         }
 

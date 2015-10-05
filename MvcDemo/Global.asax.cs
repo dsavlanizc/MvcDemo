@@ -21,7 +21,7 @@ namespace MvcDemo
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer<MyContext>(null);
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyContext>());            
         }
     }
 }

@@ -8,7 +8,8 @@ namespace MvcDemo.Models
 {
     public class MyContext : DbContext
     {
-        public MyContext() : base("name=MyConnectionString") { }
+        public MyContext() : base("name=MyConnectionString") {
+        }
         public DbSet<Student> Students { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcDemo.Controllers
 {
@@ -26,6 +27,7 @@ namespace MvcDemo.Controllers
             }
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             Student student = new Student();
@@ -106,6 +108,25 @@ namespace MvcDemo.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Student stu)
+        {
+                var query = (from name in dbCtx.Students
+                             where name.EmailID == stu.EmailID && name.Pswd == stu.Pswd
+                             select name).FirstOrDefault();
+                dbCtx.SaveChanges();
+                if (query != null)
+                {
+                    FormsAuthentication.SetAuthCookie(stu.EmailID, true);
+                    return RedirectToAction("Create");
+                }
+                else
+                {
+                    ViewBag.notfound = "Username or password is not valid";
+                    return View();
+                }   
         }
     }
 }
